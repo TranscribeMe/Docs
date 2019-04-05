@@ -7,8 +7,12 @@ Welcome to PublicAPI's documentation!
 =====================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 3
+   :hidden:
+   :caption: Quickstarts
+   
+   quickstarts/0_overview
+   quickstarts/1_request_token
 
 
 
