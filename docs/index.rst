@@ -100,13 +100,13 @@ application/json, text/json
                     
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
    :hidden:
    :caption: Quickstarts
    
    quickstarts/0_overview
    quickstarts/1_billing
-   quickstarts/2_request_token
+   quickstarts/1_request_token
 
 
 
