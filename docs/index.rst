@@ -104,9 +104,9 @@ application/json, text/json
    :hidden:
    :caption: Quickstarts
    
+   quickstarts/2_request_token
    quickstarts/0_overview
    quickstarts/1_billing
-   quickstarts/1_request_token
 
 
 
