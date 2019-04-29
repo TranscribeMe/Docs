@@ -1,3 +1,5 @@
+Request Token
+========
 To use the TranscribeMe API, you must request an API key to use in all API requests. 
 You can request an API key on this form. 
 The API key should be passed in the API calls as a custom header called "X-Api-Key". 
