@@ -1,8 +1,9 @@
-Request Token
+Authentication
 ========
 To use the TranscribeMe API, you must request an API key to use in all API requests. 
 You can request an API key on this form. 
 The API key should be passed in the API calls as a custom header called "X-Api-Key". 
+
 Authentication
 API authentication is achieved via a bearer token which identifies a single user. 
 Access token should be passed in the API calls as an authorization header parameter called "Bearer" (like 'Bearer [YOUR TOKEN]'). 
