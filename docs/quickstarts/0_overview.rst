@@ -13,7 +13,7 @@ To register new user account you will need to make a POST request to /account [M
 2. Authentication
 ----------
 
-Please see authentication explanations here.
+Please see authentication explanations :doc:`2_request_token.rst`.
 
 .. overview_step3::
 3. File Upload 
