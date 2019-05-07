@@ -106,7 +106,6 @@ application/json, text/json
    
    quickstarts/2_request_token
    quickstarts/0_overview
-   :ref:`overview_step1`
    quickstarts/1_billing
 
 
