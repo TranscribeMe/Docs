@@ -1,17 +1,20 @@
-========
 Workflow Sample
 ========
 The most common use case contains 6 steps: 
 Workflow sample
 
-----------
 .. overview_step1::
 1. Registration
 ----------
 
 To register new user account you will need to make a POST request to /account [Method Documentation].
+
+.. overview_step2::
 2. Authentication
+----------
+
 Please see authentication explanations here.
+
 3. File Upload 
 You can choose your preferred way to deliver recordings:
 By uploading content using POST request [Method Documentation]
