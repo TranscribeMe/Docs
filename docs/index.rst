@@ -16,7 +16,7 @@ Authentication
 =====================================
 The API key along with the client secret will be used to generation an initial token.
 API authentication is achieved via a bearer token which identifies a single user. 
-Click :doc:`2_request_token` to learn more about authentication.
+Click :doc:`quickstarts/2_request_token` to learn more about authentication.
 
 Workflow
 =====================================
