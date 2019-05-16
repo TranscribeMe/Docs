@@ -1,33 +1,35 @@
 Workflow Sample
 ========
 The most common use case contains 6 steps: 
-Workflow sample
-
-.. overview_step1::
-1. Registration
-----------
-
-To register new user account you will need to make a POST request to /account [Method Documentation].
-
-.. overview_step2::
-2. Authentication
-----------
-
-Please see authentication explanations at :doc:`2_request_token`.
-
 .. overview_step3::
-3. File Upload 
+1. File Upload 
 ----------
 
 You can choose your preferred way to deliver recordings:
 
 By uploading content using POST request [Method Documentation]
 
+.. code-block:: html
+    :linenos:
+    
+<h1>POST https://rest-api.transcribeme.com/api/v1/recordings/upload
+REQUEST 
+Host: rest-api.transcribeme.com
+Authorization: Bearer ${MY_TOKEN}
+X-Api-Key: ${MY_API_KEY}
+Cache-Control: no-cache
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234567abcdefg
+------WebKitFormBoundary1234567abcdefg
+Content-Disposition: form-data; name="name"; filename="FILEPATH/MYFILE.mp3"
+Content-Type: audio/mp3
+------WebKitFormBoundary1234567abcdefg--
+</h1>
+
 By specifying publicly available url [Method Documentation]
 
 Note: If you choose upload via publicly available url, you will need to add additional logic on your side to check the status of recording. 
 
-It is not possible to order a recording which is not uploaded to our system.
+NOTE: It is not possible to order a recording which is not uploaded to our system.
 
 .. overview_step4::
 4. Create Order
@@ -61,3 +63,74 @@ To set billing address make a post request to /billing/address [Method Documenta
 
 You will receive transcription results within the agreed TAT. These are available in different formats. 
 [Method Documentation]
+
+
+
+
+
+
+ 
+3. Create a new order, passing either a RecordingID or array of RecordingIDs.
+POST https://rest-api.transcribeme.com/api/v1/orders
+Request object as Content-Type application/json:
+REQUEST
+{
+               "id":"",
+               "recordings":["{RecordingID}"]
+}
+ 
+**This will return an OrderID.
+ 
+4. Obtain the recordings object from that order.
+GET https://rest-api.transcribeme.com/api/v1/orders/{OrderID}
+ 
+5. Update settings within the recording object. It is most common to update type or output here. Those expected values are:
+Type - 0: Machine Express. 1: First Draft. 2: Standard. 3: Verbatim
+Output - 0: Word. 1: HTML. 2: TXT. 3: PDF. 5: NVivo
+ 
+POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/recordings/edit
+Request object as Content-Type application/json.
+ 
+Below is a sample recording object as an array, but yours should be obtained using the method in step 2.
+REQUEST
+  [
+        {
+            "id": "{RecordingID}",
+            "settings": {
+                "language": "en",
+                "accent": "en-AE",
+                "type": 0,
+                "domain": 0,
+                "output": 0,
+                "turnaround": 48,
+                "speakers": 5,
+                "isNoisyAudio": false,
+                "isHeavyAccent": false
+            }
+        }
+    ]
+ 
+6. If you have a promo code to use, apply it here.
+POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/promocode
+Request object as Content-Type application/json.
+REQUEST
+{
+  "code": "YOUR_PROMO_CODE"
+}
+ 
+7. Place the order.
+POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/place
+Request object as Content-Type application/json.
+**Note the code for billingType below, as it should be passed as an array.
+REQUEST
+[
+  {
+    "billingType": 0
+  }
+]
+ 
+8. To query the status of the order, use the method from step 4. Here is the list of possible statuses:
+0: Uploading. 1: Ready to Transcribe. 2: In Progress. 3: Transcribed. 4: Error
+ 
+9. Once the status is 3 (Transcribed), you can view the transcript.
+GET https://rest-api.transcribeme.com/api/v1/recordings/{RecordingID}/text
