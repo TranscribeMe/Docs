@@ -16,14 +16,16 @@ Authentication
 =====================================
 The API key along with the client secret will be used to generation an initial token.
 API authentication is achieved via a bearer token which identifies a single user. 
-Click :doc:`quickstarts/2_request_token` to learn more about authentication.
+Click :doc:`quickstarts/2_request_token` to learn more about generating a token for authentication.
 
 Workflow
 =====================================
-The API key along with the client secret will be used to generation an initial token.
-API authentication is achieved via a bearer token which identifies a single user. 
+Click on our :doc:`quickstarts/0_overview` for instructions on how to upload recordings, create orders, retrieve output and update settings. This will give a basic overview of how to use our API.
 
 Billing Information
+=====================================
+Click :doc:`quickstarts/1_billing` to view past orders and update your billing information.
+
 
 .. toctree::
    :maxdepth: 4
