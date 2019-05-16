@@ -5,7 +5,7 @@
 
 Introduction
 =====================================
-Once you `sign up here <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`, you will receive your own, unique API key and client secret. The key:
+Once you `sign up here <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`_, you will receive your own, unique API key and client secret. The key:
 
 - Uniquely identifies you.
 - Allows you to generate a token that will give you access to upload recordings, create transcription orders and retrieve output.
@@ -16,7 +16,7 @@ Authentication
 =====================================
 The API key along with the client secret will be used to generation an initial token.
 API authentication is achieved via a bearer token which identifies a single user. 
-Click :doc:`here <2_request_token>` to learn more about authentication.
+Click :doc:`2_request_token` to learn more about authentication.
 
 Workflow
 =====================================
