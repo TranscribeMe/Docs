@@ -10,14 +10,14 @@ You can choose your preferred way to deliver recordings:
 
 By uploading content using POST request [Method Documentation]
 
-:: POST https://rest-api.transcribeme.com/api/v1/recordings/upload
-:: REQUEST 
-:: Cache-Control: no-cache
-:: Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234567abcdefg
-:: ------WebKitFormBoundary1234567abcdefg
-:: Content-Disposition: form-data; name="name"; filename="FILEPATH/MYFILE.mp3"
-:: Content-Type: audio/mp3
-:: ------WebKitFormBoundary1234567abcdefg--
+``POST https://rest-api.transcribeme.com/api/v1/recordings/upload
+REQUEST 
+Cache-Control: no-cache
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234567abcdefg
+------WebKitFormBoundary1234567abcdefg
+Content-Disposition: form-data; name="name"; filename="FILEPATH/MYFILE.mp3"
+Content-Type: audio/mp3
+------WebKitFormBoundary1234567abcdefg--``
 **Need better example???
 
 By specifying publicly available url [Method Documentation]
