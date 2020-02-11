@@ -11,22 +11,25 @@ You can choose your preferred way to deliver recordings:
 By uploading content using POST request [Method Documentation]
 
 ``POST https://rest-api.transcribeme.com/api/v1/recordings/upload
-|  REQUEST 
-|  Cache-Control: no-cache
-|  Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234567abcdefg
-|  ------WebKitFormBoundary1234567abcdefg
-|  Content-Disposition: form-data; name="name"; filename="FILEPATH/MYFILE.mp3"
-|  Content-Type: audio/mp3
+|  REQUEST ``
+``|  Cache-Control: no-cache
+|  Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234567abcdefg``
+``|  ------WebKitFormBoundary1234567abcdefg
+|  Content-Disposition: form-data; name="name"; filename="FILEPATH/MYFILE.mp3"``
+``|  Content-Type: audio/mp3
 |  ------WebKitFormBoundary1234567abcdefg--``
 
 **Need better example???
 
 By specifying publicly available url [Method Documentation]
-**Need publicly available url method???
+``POST https://rest-api.transcribeme.com/api/v1/recordings/remote
+| REQUEST {
+  "url": "https://www.MYWEBSITE.com/MYPATH"
+}
+``
+*: If you choose upload via publicly available url, you will need to add additional logic on your side to check the status of recording. 
 
-Note: If you choose upload via publicly available url, you will need to add additional logic on your side to check the status of recording. 
-
-NOTE: It is not possible to order a recording which is not uploaded to our system.
+<b>**: It is not possible to order a recording which is not uploaded to our system.</b>   
 
 .. overview_step2::
 2. Create Order
