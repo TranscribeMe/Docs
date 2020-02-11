@@ -8,26 +8,37 @@ The most common use case contains 5 steps:
 
 You can choose your preferred way to deliver recordings:
 
-- By uploading content using POST request [Method Documentation]
+- By uploading content:
 ``POST https://rest-api.transcribeme.com/api/v1/recordings/upload``
+
 `` REQUEST ``
+
 ``  Cache-Control: no-cache``
+
 ``  Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234567abcdefg``
+
 ``  ------WebKitFormBoundary1234567abcdefg``
+
 ``  Content-Disposition: form-data; name="name"; filename="FILEPATH/MYFILE.mp3"``
+
 ``  Content-Type: audio/mp3``
+
 ``  ------WebKitFormBoundary1234567abcdefg--``
 
-- By specifying publicly available url
-``POST https://rest-api.transcribeme.com/api/v1/recordings/remote
+- By specifying publicly available url:
+``POST https://rest-api.transcribeme.com/api/v1/recordings/remote``
+
 `` REQUEST {``
+
 ``  "url": "https://www.MYWEBSITE.com/MYPATH"``
+
 ``}``
-*If you choose upload via publicly available url, you will need to add additional logic on your side to check the status of recording. *
 
-*: It is not possible to order a recording which is not uploaded to our system.*
+*If you choose upload via publicly available url, you will need to add additional logic on your side to check the status of recording.*
 
-**This will return a RecordingId. **
+*It is not possible to order a recording which is not uploaded to our system.*
+
+**This will return a RecordingId.**
 
 .. overview_step2::
 2. Create Order
@@ -35,14 +46,18 @@ You can choose your preferred way to deliver recordings:
 After an audio file has been successfully uploaded you are able to order a transcript.
 On this step you will send a list of recording id's that will be in the order. 
 
-*(Request object as Content-Type application/json:)*
+*(Request object as Content-Type application/json)*
 ``POST https://rest-api.transcribeme.com/api/v1/orders``
+
 ``REQUEST {``
+
 ``  "id":"",``
+
 ``    "recordings":["{RecordingID}"]``
+
 ``}``
  
-**This will return an Order json object. **
+**This will return an Order json object.**
 
 *You may also obtain the Order object using the following method:*
 ``GET https://rest-api.transcribeme.com/api/v1/orders/{OrderID}``
@@ -51,52 +66,81 @@ On this step you will send a list of recording id's that will be in the order.
 3. Update settings
 ----------
 Update settings within the recording object. It is most common to update type or output here. Use the endpoints below to obtain these expected values:
+
 Type:
 ``GET https://rest-api.transcribeme.com/api/v1/transcription/types``
+
 Speakers:
 ``GET https://rest-api.transcribeme.com/api/v1/transcription/speakers``
+
 Output:
 ``GET https://rest-api.transcribeme.com/api/v1/transcription/outputgroups``
+
 Turnaround:
 ``GET https://rest-api.transcribeme.com/api/v1/transcription/turnaround``
+
 Language:
 ``GET api/v1/dictionaries/languages``
+
 Accent:
 ``GET api/v1/dictionaries/languages/accents?languageId={languageId}``
+
 Domain:
 ``GET https://rest-api.transcribeme.com/api/v1/transcription/domain``
 
 *(Request object as Content-Type application/json)*
 ``POST https://rest-api.transcribeme.com/api/v1/orders/{orderID}/recordings/edit`` 
-REQUEST
-  [
-        {
-            "id": "{RecordingID}",
-            "settings": {
-                "language": "{languageId}",
-                "accent": "{accentID}",
-                "type": {type},
-                "domain": {domain},
-                "output": {output},
-                "turnaround": {turnaround},
-                "speakers": {speakers},
-                "isNoisyAudio": false,
-                "isHeavyAccent": false
-            }
-        }
-    ]
+
+``REQUEST``
+
+``  [``
+
+``        {``
+
+``            "id": "{RecordingID}",``
+
+``            "settings": {``
+
+``                "language": "{languageId}",``
+
+``                "accent": "{accentID}",``
+
+``                "type": {type},``
+
+``                "domain": {domain},``
+
+``                "output": {output},``
+
+``                "turnaround": {turnaround},``
+
+``                "speakers": {speakers},``
+
+``                "isNoisyAudio": false,``
+
+``                "isHeavyAccent": false``
+
+``            }``
+
+``        }``
+
+``    ]``
 
 If you need to update currency, you may obtain a list of values here:
 ``GET https://rest-api.transcribeme.com/api/v1/transcription/currencies``
+
 Then apply the currency here:
 ``POST api/v1/orders/{orderId}/currency``
 
 Also if you have a promo code to use, you may apply it here:
 *(Request object as Content-Type application/json)*
 ``POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/promocode``
+
 ``REQUEST``
+
 ``  {``
+
 ``  "code": "YOUR_PROMO_CODE"``
+
 ``  }``
 
 .. overview_step4::
@@ -107,16 +151,23 @@ Also if you have a promo code to use, you may apply it here:
 
 *(Request object as Content-Type application/json)*
 ``POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/place``
+
 **Note the code for billingType below, as it should be passed as an array.**
 ``REQUEST``
+
 ``[``
+
 ``  {``
+
 ``    "billingType": 0``
+
 ``  }``
+
 ``]``
 
 To query the status of the order, use the following method:
 ``GET https://rest-api.transcribeme.com/api/v1/recordings/{recordingId}/status``
+
 For list of available status values use:
 ``GET https://rest-api.transcribeme.com/api/v1/dictionaries/recordingstatuses``
 
@@ -131,16 +182,28 @@ To obtain the results as a json object use:
 
 To download the file:
 ``POST https://rest-api.transcribeme.com/api/v1/recordings/transcriptions/download``
+
 ``REQUEST``
-``{
-	"recordings": [
-		{
-			"id": "{recordingId}",
-			"ownerId": "{userId}"
-		}
-	],
-	"output": {output],
-	"highlightedOnly": false,
-	"removeStrikeout": false
-}
+
+``{``
+
+``	"recordings": [``
+
+``		{``
+
+``			"id": "{recordingId}",``
+
+``			"ownerId": "{userId}"``
+
+``		}``
+
+``	],``
+
+``	"output": {output],``
+
+``	"highlightedOnly": false,``
+
+``	"removeStrikeout": false``
+
+``}``
 
