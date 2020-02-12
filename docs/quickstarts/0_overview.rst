@@ -56,7 +56,7 @@ On this step you will send a list of recording id's that will be in the order.
 **This will return an Order json object.**
 
 *You may also obtain the Order object using the following method:*
-``GET https://rest-api.transcribeme.com/api/v1/orders/{OrderID}``
+``GET https://rest-api.transcribeme.com/api/v1/orders/{orderId}``
 
 .. overview_step3::
 3. Update settings
@@ -86,7 +86,7 @@ Domain:
 
 *(Request object as Content-Type application/json)*::
 
-     POST https://rest-api.transcribeme.com/api/v1/orders/{orderID}/recordings/edit`` 
+     POST https://rest-api.transcribeme.com/api/v1/orders/{orderId}/recordings/edit`` 
 
 **REQUEST**::
 
