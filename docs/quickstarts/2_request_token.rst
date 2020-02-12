@@ -19,7 +19,8 @@ For the first-time login uder particular account you should use password and **g
 
 **REQUEST**:: 
 
-  grant_type=password&client_id={X-Api-Key}&client_secret={CLIENT APP SECRET}&username={USER NAME}&password={PASSWORD}
+  grant_type=password&client_id={X-Api-Key}&client_secret={CLIENT APP SECRET}
+  &username={USER NAME}&password={PASSWORD}
 
 **RESPONSE** *(Content-type: application/json)*::
 
@@ -49,7 +50,8 @@ Here is the sample of getting Access token using applicationtoken:
 
 **REQUEST**::
 
-  grant_type=applicationtoken&client_id={X-Api-Key}&client_secret={client_secret}&username={username}&authtoken={access_token}
+  grant_type=applicationtoken&client_id={X-Api-Key}&client_secret={client_secret}
+  &username={username}&authtoken={access_token}
 
 **RESPONSE** is similar to the one shown in the grant_type=password example above.        
         
@@ -58,7 +60,8 @@ The access_token lifetime is 1 hour. You can use **grant_type=refresh_token** fo
 
 **REQUEST**::
   
-  grant_type=refresh_token&refresh_token={refresh_token}&client_id={X-Api-Key}&client_secret={client_secret}
+  grant_type=refresh_token&refresh_token={refresh_token}
+  &client_id={X-Api-Key}&client_secret={client_secret}
 
 Our API also supports oAuth2. If you're going to obtain a bearer token using an external token the POST request is as follows:
 
@@ -66,12 +69,11 @@ Our API also supports oAuth2. If you're going to obtain a bearer token using an 
 
 **REQUEST**::
 
-  grant_type=externaltoken&authtoken=[EXTERNAL TOKEN]&provider=[PROVIDER NAME]&role=[USER ROLE]&client_id={X-Api-Key}&client_secret={client_secret}
+  grant_type=externaltoken&authtoken=[EXTERNAL TOKEN]&provider=[PROVIDER NAME]
+  &role=[USER ROLE]&client_id={X-Api-Key}&client_secret={client_secret}
 
-For now, the following providers are supported:
-Facebook
-Google
-Important: The external auth token should allow access to user profile information, including email.
+For now, the Facebook and Google are the only supported providers. 
+*Important: The external auth token should allow access to user profile information, including email.*
 
 **Error Details**
 
