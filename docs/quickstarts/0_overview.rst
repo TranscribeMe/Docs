@@ -63,20 +63,13 @@ On this step you will send a list of recording id's that will be in the order.
 ----------
 Update settings within the recording object. It is most common to update type or output here. Use the endpoints below to obtain these expected values:
 
-Type:
-``GET https://rest-api.transcribeme.com/api/v1/transcription/types``
-Speakers:
-``GET https://rest-api.transcribeme.com/api/v1/transcription/speakers``
-Output:
-``GET https://rest-api.transcribeme.com/api/v1/transcription/outputgroups``
-Turnaround:
-``GET https://rest-api.transcribeme.com/api/v1/transcription/turnaround``
-Language:
-``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages``
-Accent:
-``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages/accents?languageId={languageId}``
-Domain:
-``GET https://rest-api.transcribeme.com/api/v1/transcription/domain``
+Type: ``GET https://rest-api.transcribeme.com/api/v1/transcription/types``
+Speakers: ``GET https://rest-api.transcribeme.com/api/v1/transcription/speakers`` 
+Output: ``GET https://rest-api.transcribeme.com/api/v1/transcription/outputgroups``
+Turnaround: ``GET https://rest-api.transcribeme.com/api/v1/transcription/turnaround``
+Language: ``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages``
+Accent: ``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages/accents?languageId={languageId}``
+Domain: ``GET https://rest-api.transcribeme.com/api/v1/transcription/domain``
 
 *(Request object as Content-Type application/json)*::
 
