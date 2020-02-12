@@ -64,11 +64,17 @@ On this step you will send a list of recording id's that will be in the order.
 Update settings within the recording object. It is most common to update type or output here. Use the endpoints below to obtain these expected values:
 
 Type: ``GET https://rest-api.transcribeme.com/api/v1/transcription/types``
+
 Speakers: ``GET https://rest-api.transcribeme.com/api/v1/transcription/speakers`` 
+
 Output: ``GET https://rest-api.transcribeme.com/api/v1/transcription/outputgroups``
+
 Turnaround: ``GET https://rest-api.transcribeme.com/api/v1/transcription/turnaround``
+
 Language: ``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages``
+
 Accent: ``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages/accents?languageId={languageId}``
+
 Domain: ``GET https://rest-api.transcribeme.com/api/v1/transcription/domain``
 
 *(Request object as Content-Type application/json)*::
@@ -120,7 +126,7 @@ Also if you have a promo code to use, you may apply it here:
 4. Place Order
 ----------
 
-Visit `Billing Information <https://publicapidoc.readthedocs.io/en/latest/quickstarts/1_billing.html>` to confirm that your billing information is setup correctly. You can also use a promo code created by the TranscribeMe Sales Team to bypass the credit card payment step and instead be billed by invoice. 
+Visit :doc:`quickstarts/1_billing` to confirm that your billing information is setup correctly. You can also use a promo code created by the TranscribeMe Sales Team to bypass the credit card payment step and instead be billed by invoice. 
 
 *(Request object as Content-Type application/json)*
 ``POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/place``
