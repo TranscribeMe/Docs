@@ -8,12 +8,10 @@ The most common use case contains 5 steps:
 
 You can choose your preferred way to deliver recordings:
 
-- By uploading content: 
-::
+- By uploading content: ::
  POST https://rest-api.transcribeme.com/api/v1/recordings/upload
 
-**REQUEST** 
-::
+**REQUEST** ::
  Cache-Control: no-cache
  Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234567abcdefg
  ------WebKitFormBoundary1234567abcdefg
@@ -21,11 +19,13 @@ You can choose your preferred way to deliver recordings:
  Content-Type: audio/mp3
  ------WebKitFormBoundary1234567abcdefg--
 
-- By specifying publicly available url:
-``POST https://rest-api.transcribeme.com/api/v1/recordings/remote``
-``REQUEST {``
-``"url": "https://www.MYWEBSITE.com/MYPATH"``
-``}``
+- By specifying publicly available url: ::
+ POST https://rest-api.transcribeme.com/api/v1/recordings/remote
+
+**REQUEST** ::
+ {
+  "url": "https://www.MYWEBSITE.com/MYPATH"
+ }
 
 *If you choose upload via publicly available url, you will need to add additional logic on your side to check the status of recording.*
 
