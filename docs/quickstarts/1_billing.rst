@@ -4,9 +4,11 @@ Here you may check your billing information.
 
 **Address:**
 To check your billing address:
+
 ``GET https://rest-api.transcribeme.com/api/v1/billing/address``
 
 To update your billing address:
+
 ``POST https://rest-api.transcribeme.com/api/v1/billing/address``
 
 **REQUEST**::
@@ -15,7 +17,7 @@ To update your billing address:
       "firstName": "{firstName}",
       "lastName": "{lastName}",
       "email": "{email}",
-      "address1": "{address1]",
+      "address1": "{address1}",
       "address2": null,
       "country": {
           "id": "{country}",
