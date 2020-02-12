@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Introduction
-=====================================
+---------------------------------------
+**Introduction**
+
 Once you `sign up here <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`_, you will receive your own, unique API key and client secret. The key:
 
 - Uniquely identifies you.
@@ -12,18 +13,21 @@ Once you `sign up here <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`_,
 - Should be kept private and should not be shared.
 - The API key should be passed in the API calls as a custom header called "X-Api-Key". 
 
-Authentication
-=====================================
+---------------------------------------
+**Authentication**
+
 The API key along with the client secret will be used to generation an initial token.
 API authentication is achieved via a bearer token which identifies a single user. 
 Click :doc:`quickstarts/2_request_token` to learn more about generating a token for authentication.
 
-Workflow
-=====================================
+---------------------------------------
+**Workflow**
+
 Click on our :doc:`quickstarts/0_overview` for instructions on how to upload recordings, create orders, retrieve output and update settings. This will give a basic overview of how to use our API.
 
-Billing Information
-=====================================
+---------------------------------------
+**Billing Information**
+
 Click :doc:`quickstarts/1_billing` to view past orders and update your billing information.
 
 
