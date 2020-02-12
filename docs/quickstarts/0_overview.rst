@@ -13,8 +13,7 @@ You can choose your preferred way to deliver recordings:
 
      POST https://rest-api.transcribeme.com/api/v1/recordings/upload
 
-**REQUEST**
-::
+**REQUEST**::
 
      Cache-Control: no-cache
      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1234567abcdefg
@@ -24,13 +23,13 @@ You can choose your preferred way to deliver recordings:
      ------WebKitFormBoundary1234567abcdefg--
 
 ----------------
+
 - By specifying publicly available url:\
 ::
 
      POST https://rest-api.transcribeme.com/api/v1/recordings/remote
 
-**REQUEST**
-::
+**REQUEST**::
 
      {
        "url": "https://www.MYWEBSITE.com/MYPATH"
@@ -40,7 +39,7 @@ You can choose your preferred way to deliver recordings:
 
 *It is not possible to order a recording which is not uploaded to our system.*
 
-**This will return a RecordingId.**
+**This will return a recordingId.**
 
 .. overview_step2::
 2. Create Order
@@ -48,21 +47,21 @@ You can choose your preferred way to deliver recordings:
 After an audio file has been successfully uploaded you are able to order a transcript.
 On this step you will send a list of recording id's that will be in the order. 
 
-*(Request object as Content-Type application/json)*
-``POST https://rest-api.transcribeme.com/api/v1/orders``
+*(Request object as Content-Type application/json)*::
+     POST https://rest-api.transcribeme.com/api/v1/orders
 
-``REQUEST {``
+**REQUEST**::
 
-``  "id":"",``
-
-``    "recordings":["{RecordingID}"]``
-
-``}``
+     {
+       "id":"",
+       "recordings":["{recordingID}"]
+     }
  
 **This will return an Order json object.**
 
-*You may also obtain the Order object using the following method:*
-``GET https://rest-api.transcribeme.com/api/v1/orders/{OrderID}``
+*You may also obtain the Order object using the following method:*::
+     
+     GET https://rest-api.transcribeme.com/api/v1/orders/{OrderID}
 
 .. overview_step3::
 3. Update settings
@@ -90,42 +89,28 @@ Accent:
 Domain:
 ``GET https://rest-api.transcribeme.com/api/v1/transcription/domain``
 
-*(Request object as Content-Type application/json)*
-``POST https://rest-api.transcribeme.com/api/v1/orders/{orderID}/recordings/edit`` 
+*(Request object as Content-Type application/json)*::
 
-``REQUEST``
+     POST https://rest-api.transcribeme.com/api/v1/orders/{orderID}/recordings/edit`` 
 
-``  [``
+**REQUEST**::
 
-``        {``
-
-``            "id": "{RecordingID}",``
-
-``            "settings": {``
-
-``                "language": "{languageId}",``
-
-``                "accent": "{accentID}",``
-
-``                "type": {type},``
-
-``                "domain": {domain},``
-
-``                "output": {output},``
-
-``                "turnaround": {turnaround},``
-
-``                "speakers": {speakers},``
-
-``                "isNoisyAudio": false,``
-
-``                "isHeavyAccent": false``
-
-``            }``
-
-``        }``
-
-``    ]``
+     [
+       {
+         "id": "{recordingID}",
+           "settings": {
+           "language": "{languageId}",
+           "accent": "{accentID}",
+           "type": {type},
+           "domain": {domain},
+           "output": {output},
+           "turnaround": {turnaround},
+           "speakers": {speakers},
+           "isNoisyAudio": false,
+           "isHeavyAccent": false
+         }
+       }
+     ]
 
 If you need to update currency, you may obtain a list of values here:
 ``GET https://rest-api.transcribeme.com/api/v1/transcription/currencies``
