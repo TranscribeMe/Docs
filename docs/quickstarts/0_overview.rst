@@ -77,9 +77,8 @@ Accent: ``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages/ac
 
 Domain: ``GET https://rest-api.transcribeme.com/api/v1/transcription/domain``
 
-*(Request object as Content-Type application/json)*::
-
-     POST https://rest-api.transcribeme.com/api/v1/orders/{orderId}/recordings/edit`` 
+*(Request object as Content-Type application/json)*
+``POST https://rest-api.transcribeme.com/api/v1/orders/{orderId}/recordings/edit`` 
 
 **REQUEST**::
 
