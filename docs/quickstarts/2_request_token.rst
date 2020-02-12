@@ -1,6 +1,6 @@
 Authentication
 ========
-To use the TranscribeMe API, you must request an API key to use in all API requests. You can request an API key on this form. The API key should be passed in the API calls as a custom header called "X-Api-Key", which is also called the "client_id".
+To use the TranscribeMe API, you must request an API key to use in all API requests. You can request an API key `on this form <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`. The API key should be passed in the API calls as a custom header called "X-Api-Key", which is also called the "client_id".
 
 **Authentication**
 API authentication is achieved via a bearer token which identifies a single user. 
