@@ -120,7 +120,7 @@ Also if you have a promo code to use, you may apply it here:
 4. Place Order
 ----------
 
-Visit :doc:`quickstarts/1_billing` to confirm that your billing information is setup correctly. You can also use a promo code created by the TranscribeMe Sales Team to bypass the credit card payment step and instead be billed by invoice. 
+Visit `Billing Information <https://publicapidoc.readthedocs.io/en/latest/quickstarts/1_billing.html>` to confirm that your billing information is setup correctly. You can also use a promo code created by the TranscribeMe Sales Team to bypass the credit card payment step and instead be billed by invoice. 
 
 *(Request object as Content-Type application/json)*
 ``POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/place``
