@@ -8,7 +8,7 @@ The most common use case contains 5 steps:
 
 You can choose your preferred way to deliver recordings:
 
-- By uploading content:
+- By uploading content:\
 ::
 
      POST https://rest-api.transcribeme.com/api/v1/recordings/upload
@@ -23,15 +23,18 @@ You can choose your preferred way to deliver recordings:
      Content-Type: audio/mp3
      ------WebKitFormBoundary1234567abcdefg--
 
-- By specifying publicly available url: 
+----------------
+- By specifying publicly available url:\
 ::
 
      POST https://rest-api.transcribeme.com/api/v1/recordings/remote
 
-**REQUEST** ::
- {
-  "url": "https://www.MYWEBSITE.com/MYPATH"
- }
+**REQUEST**
+::
+
+     {
+       "url": "https://www.MYWEBSITE.com/MYPATH"
+     }
 
 *If you choose upload via publicly available url, you will need to add additional logic on your side to check the status of recording.*
 
