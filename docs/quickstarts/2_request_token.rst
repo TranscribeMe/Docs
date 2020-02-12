@@ -14,6 +14,7 @@ In order to get an access token some additional data must be sent in the request
 4. password or applicationtoken
 
 For the first-time login uder particular account you should use password and **grant_type=password** with the below method:
+
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
 **REQUEST**:: 
@@ -60,6 +61,7 @@ The access_token lifetime is 1 hour. You can use **grant_type=refresh_token** fo
   grant_type=refresh_token&refresh_token={refresh_token}&client_id={X-Api-Key}&client_secret={client_secret}
 
 Our API also supports oAuth2. If you're going to obtain a bearer token using an external token the POST request is as follows:
+
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
 **REQUEST**::
