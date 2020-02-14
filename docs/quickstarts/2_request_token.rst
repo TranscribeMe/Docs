@@ -13,7 +13,7 @@ In order to get an access token some additional data must be sent in the request
 3. username - Username (email) of the portal account
 4. password or applicationtoken
 
-For the first-time login uder particular account you should use password and **grant_type=password** with the below method:
+For the first-time login under particular account you should use password and **grant_type=password** with the below method:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
@@ -73,6 +73,7 @@ Our API also supports oAuth2. If you're going to obtain a bearer token using an 
   &role=[USER ROLE]&client_id={X-Api-Key}&client_secret={client_secret}
 
 For now, the Facebook and Google are the only supported providers. 
+
 *Important: The external auth token should allow access to user profile information, including email.*
 
 **Error Details**
