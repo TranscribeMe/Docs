@@ -18,7 +18,7 @@ Once you `sign up here <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`_,
 
 **Authentication**
 
-The API key along with the client secret will be used to generation an initial token.
+The API key along with the client secret will be used to generate an initial token.
 API authentication is achieved via a bearer token which identifies a single user. 
 Click :doc:`quickstarts/2_request_token` to learn more about generating a token for authentication.
 
