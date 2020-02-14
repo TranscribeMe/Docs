@@ -98,18 +98,15 @@ Domain: ``GET https://rest-api.transcribeme.com/api/v1/transcription/domain``
                }
           }
      ]
-
-If you need to update currency, you may obtain a list of values here:
-``GET https://rest-api.transcribeme.com/api/v1/transcription/currencies``
-
-Then apply the currency here:
-``POST https://rest-api.transcribeme.com/api/v1/orders/{orderId}/currency``
-
-**REQUEST**::
-
-     {
-          "id": "sample string 1"
-     }
+..
+     If you need to update currency, you may obtain a list of values here:
+     ``GET https://rest-api.transcribeme.com/api/v1/transcription/currencies``
+     Then apply the currency here:
+     ``POST https://rest-api.transcribeme.com/api/v1/orders/{orderId}/currency``
+     **REQUEST**::
+          {
+               "id": "sample string 1"
+          }
 
 Also if you have a promo code to use, you may apply it here:
 
