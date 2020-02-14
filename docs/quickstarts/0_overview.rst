@@ -112,8 +112,9 @@ Then apply the currency here:
      }
 
 Also if you have a promo code to use, you may apply it here:
+
 *(Request object as Content-Type application/json)*
-``POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/promocode``
+``POST https://rest-api.transcribeme.com/api/v1/orders/{orderID}/promocode``
 
 **REQUEST**::
 
@@ -128,7 +129,7 @@ Also if you have a promo code to use, you may apply it here:
 Visit :doc:`1_billing` to confirm that your billing information is setup correctly. You can also use a promo code created by the TranscribeMe Sales Team to bypass the credit card payment step and instead be billed by invoice. 
 
 *(Request object as Content-Type application/json)*
-``POST https://rest-api.transcribeme.com/api/v1/orders/{OrderID}/place``
+``POST https://rest-api.transcribeme.com/api/v1/orders/{orderID}/place``
 
 **Note the code for billingType below, as it should be passed as an array.**
 **REQUEST**::
