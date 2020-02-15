@@ -8,10 +8,10 @@ Access token should be passed in the API calls as an authorization header parame
 
 In order to get an access token some additional data must be sent in the request:
 
-1. client_id (X-Api-Key) - this is provided by TranscribeMe
-2. client_secret - this is provided by TranscribeMe
-3. username - Username (email) of the portal account
-4. password or applicationtoken
+1. **client_id** (X-Api-Key) - this is provided by TranscribeMe
+2. **client_secret** - this is provided by TranscribeMe
+3. **username** - Username (email) of the portal account
+4. **password** or applicationtoken
 
 When you first login under a particular account you should use your portal password and **grant_type=password** with the below method:
 
@@ -22,7 +22,7 @@ When you first login under a particular account you should use your portal passw
   grant_type=password&client_id={X-Api-Key}&client_secret={CLIENT APP SECRET}
   &username={USER NAME}&password={PASSWORD}
 
-**RESPONSE** *(Content-type: application/json)*::
+**RESPONSE** *(Content-type:* **application/x-www-form-urlencoded***)*::
 
   {
     "access_token":"{YOUR TOKEN}",
