@@ -153,7 +153,7 @@ To obtain the results as a json object use:
 ``GET https://rest-api.transcribeme.com/api/v1/recordings/{recordingId}/transcription``
 
 To download the file:
-``POST https://rest-api.transcribeme.com/api/v1/recordings/transcriptions/download``
+``POST https://rest-api.transcribeme.com/api/v1/recordings/download``
 
 **REQUEST**::
 
