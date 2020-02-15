@@ -13,7 +13,7 @@ In order to get an access token some additional data must be sent in the request
 3. username - Username (email) of the portal account
 4. password or applicationtoken
 
-For the first-time login under particular account you should use password and **grant_type=password** with the below method:
+When you first login under a particular account you should use your portal password and **grant_type=password** with the below method:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
