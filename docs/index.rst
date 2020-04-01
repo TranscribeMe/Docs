@@ -46,7 +46,7 @@ Click :doc:`quickstarts/1_billing` to view past orders and update your billing i
 
 
 
-Indices and tables
+TranscribeMe REST API
 ==================
 
 * :ref:`genindex`
