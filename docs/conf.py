@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'PublicAPI'
+project = 'TranscribeMe REST API'
 copyright = '2019, TranscribeMe'
 author = 'TranscribeMe'
 
