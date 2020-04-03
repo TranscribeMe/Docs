@@ -7,7 +7,15 @@ API authentication is achieved via a bearer token which identifies a single user
 Access token should be passed in the API calls as an authorization header parameter called "Bearer", which is typically used like 'Bearer {YOUR TOKEN}'. 
 
 In order to get an access token some additional data must be sent in the request:
+eme.com/api/v1/token``
 
+**REQUEST**::
+
+  grant_type=applicationtoken&client_id={X-Api-Key}&client_secret={client_secret}
+  &username={username}&authtoken={access_token}
+
+**RESPONSE** is similar to the one shown in the grant_type=password example above.        
+        
 1. **client_id** (X-Api-Key) - this is provided by TranscribeMe
 2. **client_secret** - this is provided by TranscribeMe
 3. **username** - Username (email) of the portal account
@@ -40,21 +48,16 @@ When you first login under a particular account you should use your portal passw
         
         
 Then you will be able to generate {access_token} and use **grant_type=applicationtoken** for authentication in the future. 
-There are couple of reasons why applicationtoken usage is more preferable than password for API Integration:
+There are few of reasons why applicationtoken usage is more preferable than password for API Integration:
+
 1. Password can be changed on UI and as a result all api calls authorization will fail
+
 2. Passwords have policies and it is required to change password periodically
+
 3. Applicationtoken can be regenerated using regenerate method. 
 
 Here is the sample of getting Access token using applicationtoken:
-``POST https://rest-api.transcribeme.com/api/v1/token``
-
-**REQUEST**::
-
-  grant_type=applicationtoken&client_id={X-Api-Key}&client_secret={client_secret}
-  &username={username}&authtoken={access_token}
-
-**RESPONSE** is similar to the one shown in the grant_type=password example above.        
-        
+``POST https://rest-api.transcrib
 The access_token lifetime is 1 hour. You can use **grant_type=refresh_token** for getting a new access token when the old one is expired. You just need to make the following POST request:
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
