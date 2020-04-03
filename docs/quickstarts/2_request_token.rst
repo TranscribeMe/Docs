@@ -57,6 +57,7 @@ Application_token can be regenerated using regenerate method:
 ``POST https://rest-api.transcribeme.com/api/v1/applications/tokens/regenerate``
 
 **HEADERS**::
+
   Content-Type: application/x-www-form-urlencoded
   Authorization: Bearer {YOUR TOKEN}
   X-Api-Key: {X-Api-Key}
