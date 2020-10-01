@@ -11,7 +11,6 @@ Here are the values you will need to access your API:
 3. **username** - Username (email) of the portal account
 4. **password** or applicationtoken
 
-**Authentication**
 When you first authenticate a particular account you should use your portal password and **grant_type=password** with the below method:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
