@@ -75,7 +75,7 @@ Language: ``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages`
 
 Accent: ``GET https://rest-api.transcribeme.com/api/v1/dictionaries/languages/accents?languageId={languageId}``
 
-Domain: ``GET https://rest-api.transcribeme.com/api/v1/transcription/domain``
+Domain: ``GET https://rest-api.transcribeme.com/api/v1/transcription/domains``
 
 *(Request object as Content-Type application/json)*
 ``POST https://rest-api.transcribeme.com/api/v1/orders/{orderId}/recordings/edit`` 
@@ -122,6 +122,7 @@ Also if you have a promo code to use, you may apply it here:
 .. overview_step4::
 4. Place Order
 ----------
+***IMPORTANT!!!*** If you have been given a promo code to use, you MUST enter it before placing an order. Please see the above step for info about this.
 
 Visit :doc:`1_billing` to confirm that your billing information is setup correctly. You can also use a promo code created by the TranscribeMe Sales Team to bypass the credit card payment step and instead be billed by invoice. 
 
