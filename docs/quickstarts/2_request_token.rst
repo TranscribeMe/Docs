@@ -2,34 +2,28 @@ Authentication
 ========
 To use the TranscribeMe API, you must request an API key to use in all API requests. You can request an API key `on this form <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`_. The API key should be passed in the API calls as a custom header called "X-Api-Key", which is also called the "client_id".
 
-**Authentication**
-API authentication is achieved via a bearer token which identifies a single user. 
-Access token should be passed in the API calls as an authorization header parameter called "Bearer", which is typically used like 'Bearer {YOUR TOKEN}'. 
+API authentication is achieved via a bearer token which identifies a single user. Access token should be passed in the API calls as an authorization header parameter called "Bearer", which is typically used like 'Bearer {YOUR TOKEN}'.      
 
-In order to get an access token some additional data must be sent in the request:
-
-**REQUEST**::
-
-  grant_type=applicationtoken&client_id={X-Api-Key}&client_secret={client_secret}
-  &username={username}&authtoken={access_token}
-
-**RESPONSE** is similar to the one shown in the grant_type=password example above.        
-        
+Here are the values you will need to access your API:
 1. **client_id** (X-Api-Key) - this is provided by TranscribeMe
 2. **client_secret** - this is provided by TranscribeMe
 3. **username** - Username (email) of the portal account
 4. **password** or applicationtoken
 
-When you first login under a particular account you should use your portal password and **grant_type=password** with the below method:
+**Authentication**
+When you first authenticate a particular account you should use your portal password and **grant_type=password** with the below method:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
-**REQUEST**:: 
+**REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*:: 
 
-  grant_type=password&client_id={X-Api-Key}&client_secret={CLIENT APP SECRET}
-  &username={USER NAME}&password={PASSWORD}
+  grant_type: password
+  client_id: {X-Api-Key}
+  client_secret: {CLIENT APP SECRET}
+  username: {USER NAME}
+  password: {PASSWORD}
 
-**RESPONSE** *(Content-type:* **application/x-www-form-urlencoded**)*::
+**RESPONSE** *(Content-type:* **application/json**)*::
 
   {
     "access_token":"{YOUR TOKEN}",
@@ -43,10 +37,11 @@ When you first login under a particular account you should use your portal passw
     "roles":"{USER ROLES LIST COMMA SEPARATED}",
     ".issued":"{ISSUE DATE}",
     ".expires":"{EXPIRES DATE}"
-  }
+  }        
         
-        
-Then you will be able to generate {access_token} and use **grant_type=applicationtoken** for authentication in the future. 
+Then you will be able to generate {access_token} to be used in future calls like the below "regenerate" example.
+
+You may then use **grant_type=applicationtoken** for authentication in the future. 
 There are couple reasons why applicationtoken usage is more preferable than password for API Integration:
 
 1. Password can be changed on UI and as a result all api calls authorization will fail
@@ -66,30 +61,38 @@ Application_token can be regenerated using regenerate method:
   
   client_id={X-Api-Key}
   
-Then obtain the access token using application_token:
+The json response will provide with an application_token value, which can be used in the token method below:
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
-**REQUEST**::
+**REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*::
   
-  grant_type=applicationtoken&authtoken={application_token}
-  &client_id={X-Api-Key}&client_secret={client_secret}
+  grant_type=applicationtoken
+  authtoken={application_token}
+  client_id={X-Api-Key}
+  client_secret={client_secret}
   
-The access_token lifetime is 1 hour. You can use **grant_type=refresh_token** for getting a new access token when the old one is expired. You just need to make the following POST request:
+The access_token lifetime is 1 hour. You can also use **grant_type=refresh_token** for getting a new access token when the old one is expired. You just need to make the following POST request:
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
-**REQUEST**::
+**REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*::
   
-  grant_type=refresh_token&refresh_token={refresh_token}
-  &client_id={X-Api-Key}&client_secret={client_secret}
+  grant_type=refresh_token
+  refresh_token={refresh_token}
+  client_id={X-Api-Key}
+  client_secret={client_secret}
 
 Our API also supports oAuth2. If you're going to obtain a bearer token using an external token the POST request is as follows:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
-**REQUEST**::
+**REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*::
 
-  grant_type=externaltoken&authtoken=[EXTERNAL TOKEN]&provider=[PROVIDER NAME]
-  &role=[USER ROLE]&client_id={X-Api-Key}&client_secret={client_secret}
+  grant_type=externaltoken
+  authtoken=[EXTERNAL TOKEN]
+  provider=[PROVIDER NAME]
+  role=[USER ROLE]
+  client_id={X-Api-Key}
+  client_secret={client_secret}
 
 For now, the Facebook and Google are the only supported providers. 
 
