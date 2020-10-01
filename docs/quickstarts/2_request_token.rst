@@ -5,6 +5,7 @@ To use the TranscribeMe API, you must request an API key to use in all API reque
 API authentication is achieved via a bearer token which identifies a single user. Access token should be passed in the API calls as an authorization header parameter called "Bearer", which is typically used like 'Bearer {YOUR TOKEN}'.      
 
 Here are the values you will need to access your API:
+
 1. **client_id** (X-Api-Key) - this is provided by TranscribeMe
 2. **client_secret** - this is provided by TranscribeMe
 3. **username** - Username (email) of the portal account
@@ -49,6 +50,7 @@ There are couple reasons why applicationtoken usage is more preferable than pass
 2. Passwords have policies and it is required to change password periodically
 
 Application_token can be regenerated using regenerate method:
+
 ``POST https://rest-api.transcribeme.com/api/v1/applications/tokens/regenerate``
 
 **HEADERS**::
@@ -62,6 +64,7 @@ Application_token can be regenerated using regenerate method:
   client_id={X-Api-Key}
   
 The json response will provide with an application_token value, which can be used in the token method below:
+
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
 **REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*::
@@ -72,6 +75,7 @@ The json response will provide with an application_token value, which can be use
   client_secret={client_secret}
   
 The access_token lifetime is 1 hour. You can also use **grant_type=refresh_token** for getting a new access token when the old one is expired. You just need to make the following POST request:
+
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
 **REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*::
