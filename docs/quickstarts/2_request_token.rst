@@ -11,7 +11,7 @@ Here are the values you will need to access your API:
 3. **username** - Username (email) of the portal account
 4. **password** or applicationtoken
 
-========
+___________
 When you first authenticate a particular account you should use your portal password and **grant_type=password** with the below method:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
@@ -45,7 +45,7 @@ When you first authenticate a particular account you should use your portal pass
     ".expires":"{EXPIRES DATE}"
   }        
         
-========
+___________
 Then you will be able to generate {access_token} to be used in future calls like the below "regenerate" example.
 
 You may then use **grant_type=applicationtoken** for authentication in the future. 
@@ -69,7 +69,7 @@ Application_token can be regenerated using regenerate method:
   
   client_id={X-Api-Key}
   
-========
+___________
 The json response will provide with an application_token value, which can be used in the **grant_type=applicationtoken** token method below:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
@@ -86,7 +86,7 @@ The json response will provide with an application_token value, which can be use
   client_id={X-Api-Key}
   client_secret={client_secret}
   
-========
+___________
 The access_token lifetime is 1 hour. You can also use **grant_type=refresh_token** for getting a new access token when the old one is expired. You just need to make the following POST request:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
@@ -103,7 +103,7 @@ The access_token lifetime is 1 hour. You can also use **grant_type=refresh_token
   client_id={X-Api-Key}
   client_secret={client_secret}
 
-========
+___________
 Our API also supports oAuth2. If you're going to obtain a bearer token using an external token the POST request is as follows:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
