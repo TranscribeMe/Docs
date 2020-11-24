@@ -73,7 +73,7 @@ Application_token can be regenerated using regenerate method:
   
 ___________
 
-The json response will provide with an application_token value, which can be used in the **grant_type=applicationtoken** token method below:
+The json response will provide an application_token value, which can be used in the **grant_type=applicationtoken** token method below:
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
