@@ -15,7 +15,12 @@ When you first authenticate a particular account you should use your portal pass
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
-**REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*:: 
+**HEADERS**::
+
+  Content-Type: application/x-www-form-urlencoded
+  X-Api-Key: {X-Api-Key}
+
+**REQUEST**:: 
 
   grant_type: password
   client_id: {X-Api-Key}
@@ -66,7 +71,12 @@ The json response will provide with an application_token value, which can be use
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
-**REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*::
+**HEADERS**::
+
+  Content-Type: application/x-www-form-urlencoded
+  X-Api-Key: {X-Api-Key}
+
+**REQUEST**::
   
   grant_type=applicationtoken
   authtoken={application_token}
@@ -77,7 +87,12 @@ The access_token lifetime is 1 hour. You can also use **grant_type=refresh_token
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
-**REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*::
+**HEADERS**::
+
+  Content-Type: application/x-www-form-urlencoded
+  X-Api-Key: {X-Api-Key}
+
+**REQUEST**::
   
   grant_type=refresh_token
   refresh_token={refresh_token}
@@ -88,7 +103,12 @@ Our API also supports oAuth2. If you're going to obtain a bearer token using an 
 
 ``POST https://rest-api.transcribeme.com/api/v1/token``
 
-**REQUEST** *(Content-type:* **application/x-www-form-urlencoded**)*::
+**HEADERS**::
+
+  Content-Type: application/x-www-form-urlencoded
+  X-Api-Key: {X-Api-Key}
+
+**REQUEST**::
 
   grant_type=externaltoken
   authtoken=[EXTERNAL TOKEN]
