@@ -6,7 +6,6 @@
 ---------------------------------------
 
 **Introduction**
-|location_link|.
 
 Once you `sign up here <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`_, you will receive your own, unique API key and client secret. The key:
 
