@@ -4,7 +4,7 @@ To use the TranscribeMe API, you must request an API key to use in all API reque
 
 .. |location_linka| raw:: html
 
-   <a href="https://transcribeme.wufoo.com/forms/z88657713u58wc" target="_blank">on this form</a>
+   <a href="https://api-docs.transcribeme.com/en/latest/quickstarts/3_api_request.html">on this form</a>
 
 API authentication is achieved via a bearer token which identifies a single user. Access token should be passed in the API calls as an authorization header parameter called "Bearer", which is typically used like 'Bearer {YOUR TOKEN}'.      
 
