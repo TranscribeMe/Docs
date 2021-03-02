@@ -6,9 +6,15 @@
 ---------------------------------------
 
 **Introduction**
+|location_link|.
 
 Once you `sign up here <https://transcribeme.wufoo.com/forms/z88657713u58wc/>`_, you will receive your own, unique API key and client secret. The key:
 
+Once you |location_link|, you will receive your own, unique API key and client secret. The key:
+
+.. |location_link| raw:: html
+   <a href="https://transcribeme.wufoo.com/forms/z88657713u58wc" target="_blank">sign up here</a>
+   
 1. Uniquely identifies you.
 2.  Allows you to generate a token that will give you access to upload recordings, create transcription orders and retrieve output.
 3. Should be kept private and should not be shared.
