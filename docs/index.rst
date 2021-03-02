@@ -7,7 +7,11 @@
 
 **Introduction**
 
-Once you :doc:`quickstarts/3_api_request`, you will receive your own, unique API key and client secret. The key:
+Once you |location_link|, you will receive your own, unique API key and client secret. The key:
+
+.. |location_link| raw:: html
+
+   <a href="https://api-docs.transcribeme.com/en/latest/quickstarts/3_api_request.html">on this form</a>   
    
 1. Uniquely identifies you.
 2. Allows you to generate a token that will give you access to upload recordings, create transcription orders and retrieve output.
