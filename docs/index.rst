@@ -2,11 +2,6 @@
    sphinx-quickstart on Tue Apr  2 16:10:03 2019.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-
-
-.. raw:: html
-
-    <iframe src="https://transcribeme.wufoo.com/forms/z88657713u58wc/" height="345px" width="100%"></iframe>
     
 ---------------------------------------
 
