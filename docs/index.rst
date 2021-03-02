@@ -7,14 +7,10 @@
 
 **Introduction**
 
-Once you |location_link|, you will receive your own, unique API key and client secret. The key:
-
-.. |location_link| raw:: html
-
-   <a href="https://transcribeme.wufoo.com/forms/z88657713u58wc" target="_blank">sign up here</a>
+Once you :doc:`quickstarts/3_api_request`, you will receive your own, unique API key and client secret. The key:
    
 1. Uniquely identifies you.
-2.  Allows you to generate a token that will give you access to upload recordings, create transcription orders and retrieve output.
+2. Allows you to generate a token that will give you access to upload recordings, create transcription orders and retrieve output.
 3. Should be kept private and should not be shared.
 4. The API key should be passed in the API calls as a custom header called "X-Api-Key". 
 
