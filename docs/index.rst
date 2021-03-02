@@ -44,6 +44,7 @@ Click :doc:`quickstarts/1_billing` to view past orders and update your billing i
    :hidden:
    :caption: Quickstarts
    
+   quickstarts/3_api_request
    quickstarts/2_request_token
    quickstarts/0_overview
    quickstarts/1_billing
