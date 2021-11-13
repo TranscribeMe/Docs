@@ -99,6 +99,8 @@ Domain: ``GET https://rest-api.transcribeme.com/api/v1/transcription/domains``
           }
      ]
 ..
+     ***IMPORTANT!!!*** All fields in ``settings`` dict must exist.
+
      If you need to update currency, you may obtain a list of values here:
      ``GET https://rest-api.transcribeme.com/api/v1/transcription/currencies``
      Then apply the currency here:
