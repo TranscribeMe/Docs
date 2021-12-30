@@ -8,9 +8,8 @@ The most common use case contains 5 steps:
 
 You can choose your preferred way to deliver recordings:
 
-- The **preferred method** for uploading will require splitting the file into smaller "chunks". For optimal upload speed, each chunk should be exactly 5MB. Only the last chunk can be less than 5MB. If a total file size is less than 5 MBs, then it can still be uploaded with async approach, since the last chunk (a single chunk in this case) can be less than 5MB. Overall, this process requires 3 different endpoints:
+**I.** The **preferred method** for uploading will require splitting the file into smaller "chunks". For optimal upload speed, each chunk should be exactly 5MB. Only the last chunk can be less than 5MB. If a total file size is less than 5 MBs, then it can still be uploaded with async approach, since the last chunk (a single chunk in this case) can be less than 5MB. Overall, this process requires 3 different endpoints:
 
-**I.**
 **STEPS**
      1. ``GET https://rest-api.transcribeme.com/api/v1/uploads/url?fileName={filename.mp3}&isAsync=true``
      
