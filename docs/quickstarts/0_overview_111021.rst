@@ -8,9 +8,33 @@ The most common use case contains 5 steps:
 
 You can choose your preferred way to deliver recordings:
 
-- By uploading content:
-``POST https://rest-api.transcribeme.com/api/v1/recordings/upload``
+- The **preferred method** for uploading will require splitting the file into smaller "chunks". For optimal upload speed, each chunk should be exactly 5MB. Only the last chunk can be less than 5MB. If a total file size is less than 5 MBs, then it can still be uploaded with async approach, since the last chunk (a single chunk in this case) can be less than 5MB. Overall, this process requires 3 different endpoints:
 
+**I.**
+**STEPS**::
+
+     1. ``GET https://rest-api.transcribeme.com/api/v1/uploads/url?fileName={filename.mp3}&isAsync=true``
+     - No body is required as parameters are passed in the url. 
+     - Filename is whatever you choose to call the file, but the extension (i.e. mp3 or mp4) should match the file correctly.
+     - **This will return the uploadId and recordingId, to be used in steps 2 and 3.**
+     
+     2. ``POST https://rest-api.transcribeme.com/api/v1/uploads/async?uploadId={uploadId}&recordingId={recordingId}&chunkNumber=0``
+     - Prior to this step, you will split an audio file into parts of equal duration. Each audio chunk should be exactly 5MB, except for the last one.
+     - You will use **uploadId** and **recordingId** from step 1 in the url above.
+     - **chunkNumber** in url above should be sequential to that chunk number (i.e. 0,1,2,etc).
+     - Body **REQUEST** includes file of the file "chunk" to upload. This field named should be called **file**.
+     - Repeat this step for each chunk, then move to step 3. 
+     
+     3. ``POST https://rest-api.transcribeme.com/api/v1/uploads/async/commit?uploadId={uploadId}&recordingId={recordingId}``
+     - Once all chunks have been uploaded, this will commit them all and combine them into one recording. 
+     - There is no body required here, just pass values in the url again.
+
+----------------
+
+- The simple method belows are being deprecated but can be used still:
+
+**II.**
+``POST https://rest-api.transcribeme.com/api/v1/recordings/upload``
 **REQUEST**::
 
      Cache-Control: no-cache
@@ -23,6 +47,7 @@ You can choose your preferred way to deliver recordings:
 ----------------
 
 - By specifying publicly available url:
+**III.**
 ``POST https://rest-api.transcribeme.com/api/v1/recordings/remote``
 
 **REQUEST**::
