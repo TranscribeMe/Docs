@@ -23,7 +23,7 @@ You can choose your preferred way to deliver recordings:
 ----------------
 
 - By specifying publicly available url:
-``POST https://rest-api.transcribeme.com/api/v1/recordings/remote``
+``POST https://rest-api.transcribeme.com/api/v1/recordings/upload/remote``
 
 **REQUEST**::
 
