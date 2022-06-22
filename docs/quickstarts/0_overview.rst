@@ -17,13 +17,13 @@ You can choose your preferred way to deliver recordings:
      
      - Filename is whatever you choose to call the file, but the extension (i.e. mp3 or mp4) should match the file correctly.
      
-     - **This will return the URL endpoint (which includes uploadId and recordingId), to be used in steps 2 and 3. We will call it URL1**
+     - **This will return the URL endpoint (which includes uploadId and recordingId), to be used in steps 2 and 3. We will call it URL1.**
      
      2. ``POST URL1``
      
      - Prior to this step, you will split an audio file into parts of equal duration. Each audio chunk should be exactly 5MB, except for the last one.
      
-     - You will use the URL provided in the response from step 1 above as the POST endpoint.
+     - You will use the URL provided in the response from step 1 above as the POST endpoint (**URL1**).
      
      - **chunkNumber** in url above should be sequential to that chunk number (i.e. 0,1,2,etc).
      
