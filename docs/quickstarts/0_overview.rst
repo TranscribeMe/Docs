@@ -19,7 +19,7 @@ You can choose your preferred way to deliver recordings:
      
      - **This will return the URL endpoint (which includes uploadId and recordingId), to be used in steps 2 and 3. We will call it URL1.**
      
-     2. ``POST URL1``
+     2. ``POST URL1&chunkNumber=0``
      
      - Prior to this step, you will split an audio file into parts of equal duration. Each audio chunk should be exactly 5MB, except for the last one.
      
